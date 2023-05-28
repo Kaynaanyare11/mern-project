@@ -16,7 +16,7 @@ export const useHttpClient = ()=>{
 
             const api="https://placesapi.vercel.app"
 
-            const response = await fetch (`${api}/${url}`, {
+            const response = await fetch (`${api}${url}`, {
                 method,
                 body,
                 headers,
