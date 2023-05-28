@@ -6,7 +6,7 @@ export const useHttpClient = ()=>{
 
     const activeHttpRequests =useRef([]);
 
-    const sendRequest = useCallback( async (url,method = 'GET', body = null) =>{
+    const sendRequest = useCallback( async (url,method = 'GET', body = null, headers = {}) =>{
 
         setIsLoading(true)
         const httpAbortCtrl = new AbortController();
@@ -19,6 +19,7 @@ export const useHttpClient = ()=>{
             const response = await fetch (`${api}${url}`,{
                 method,
                 body,
+                headers,
                 signal: httpAbortCtrl.signal
     
             })

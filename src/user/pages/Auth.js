@@ -93,9 +93,6 @@ const Auth = () => {
         const responseData = await sendRequest(
           '/api/users/signup',
           'POST',
-          {
-            'Content-Type': 'application/json'
-          },
           formData
         );
 
