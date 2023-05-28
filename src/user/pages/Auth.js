@@ -93,6 +93,16 @@ const Auth = () => {
         const responseData = await sendRequest(
           '/api/users/signup',
           'POST',
+          JSON.stringify({
+            email: formState.inputs.email.value,
+            password: formState.inputs.password.value,
+            name: formState.inputs.name.value,
+            image: formState.inputs.image.value
+
+          }),
+          {
+            'Content-Type': 'application/json'
+          },
           formData
         );
 
