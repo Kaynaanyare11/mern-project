@@ -6,7 +6,7 @@ export const useHttpClient = ()=>{
 
     const activeHttpRequests =useRef([]);
 
-    const sendRequest = useCallback( async (url,method = 'GET', body = null, headers = {}) =>{
+    const sendRequest = useCallback( async (url,method = 'GET', body = null) =>{
 
         setIsLoading(true)
         const httpAbortCtrl = new AbortController();
@@ -16,10 +16,9 @@ export const useHttpClient = ()=>{
 
             const api="https://placesapi.vercel.app"
 
-            const response = await fetch (`${api}${url}`, {
+            const response = await fetch (`${api}${url}`,{
                 method,
                 body,
-                headers,
                 signal: httpAbortCtrl.signal
     
             })
