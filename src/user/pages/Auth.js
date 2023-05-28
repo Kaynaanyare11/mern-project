@@ -91,7 +91,6 @@ const Auth = () => {
         formData.append('password', formState.inputs.password.value);
         formData.append('image', formState.inputs.image.value);
         const responseData = await sendRequest(
-          JSON.stringify(formData),
           '/api/users/signup',
           'POST',
           formData
