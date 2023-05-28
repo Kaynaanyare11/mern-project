@@ -20,7 +20,6 @@ const App = () => {
   const { token, login, logout, userId } = useAuth();
 
   let routes;
-
   if (token) {
     routes = (
       <Switch>
